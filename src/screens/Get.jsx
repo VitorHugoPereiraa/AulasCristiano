@@ -29,6 +29,7 @@ function Get() {
           //   where("created_by", "==", "12356"),
           //   orderBy("limitDate", "asc")
           // );
+
           //Busca com filtro no campo created_by e com order_by pelo campo de limitDate 'asc'||'desc' e limit
           // let q = query(
           //   collection(db, "tasks"),
