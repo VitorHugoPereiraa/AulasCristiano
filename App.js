@@ -12,28 +12,10 @@ import MyDatePicker from "./src/components/DatePicker";
 
 //Import de func do firebase modular
 import { doc, collection, setDoc } from "firebase/firestore";
-
-export default function App() {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [limitDate, SetLimitDate] = useState(new Date());
-  console.log(db);
-
-  const handleSubmit = async () => {
-    let docRef = doc(collection(db, "tasks"));
-
-    let payload = {
-      id: docRef.id,
-      title: title,
-      description: description,
-      limitDate: limitDate,
-    };
-
-    await setDoc(docRef, payload);
-  };
-
+import Get from "./src/screens/Get";
+const Add = () => {
   return (
-    <View style={styles.container}>
+    <View>
       <TextInput
         style={{
           width: 300,
@@ -74,6 +56,32 @@ export default function App() {
       >
         <Text style={{ color: "#fff" }}>Salvar</Text>
       </TouchableOpacity>
+    </View>
+  );
+};
+
+export default function App() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [limitDate, SetLimitDate] = useState(new Date());
+  console.log(db);
+
+  const handleSubmit = async () => {
+    let docRef = doc(collection(db, "tasks"));
+
+    let payload = {
+      id: docRef.id,
+      title: title,
+      description: description,
+      limitDate: limitDate,
+    };
+
+    await setDoc(docRef, payload);
+  };
+
+  return (
+    <View style={styles.container}>
+      <Get />
     </View>
   );
 }
