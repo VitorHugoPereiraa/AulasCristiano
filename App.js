@@ -12,7 +12,7 @@ import MyDatePicker from "./src/components/DatePicker";
 
 //Import de func do firebase modular
 import { doc, collection, setDoc } from "firebase/firestore";
-import Get from "./src/screens/Get";
+import Update from "./src/screens/Update";
 const Add = () => {
   return (
     <View>
@@ -81,7 +81,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Get />
+      <Update />
     </View>
   );
 }
